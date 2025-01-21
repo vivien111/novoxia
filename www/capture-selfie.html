@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from up2client.com/envato/payfast-pwa/main-file/light-mode/capture-selfie.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 26 Jul 2024 08:57:43 GMT -->
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>PayFast E-Wallet _ Finance & Online Payment Mobile App</title>
+	<link rel="icon" href="assets/images/favicon/icon.png">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="assets/css/all.min.css">
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="assets/css/media-query.css">
+</head>
+<body>
+	<div class="site-content">
+		<!-- Preloader start -->
+		<div class="loader-mask">
+			<div class="loading-window">
+				<div class="loader">
+					<div class="loader-inner line-scale">
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Preloader end -->
+		<!-- Capture selfie screen content start -->
+		<div class="verify-number-main" id="upload-id-page">
+			<div class="verify-number-top">
+				<div class="container">
+					<div class="verify-number-top-content">
+						<div class="back-btn">
+							<a href="javascript:history.go(-1)">
+								<img src="assets/svg/header-white-icon.svg" alt="back-btn">
+							</a>
+						</div>
+						<div class="header-title">
+							<p>Autofoto</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<style>
+				 
+        #canvas {
+            display: none;
+        }
+        #photo {
+            width: 100%;
+            max-width: 700px;
+            height: auto;
+            margin-top: 150px;
+        }
+			</style>
+			<script type="text/javascript">
+		document.addEventListener('deviceready', function() {
+    const video = document.getElementById('video');
+    const canvas = document.getElementById('canvas');
+    const photo = document.getElementById('photo');
+    const captureButton = document.getElementById('capture');
+    const toggleFlashButton = document.getElementById('toggleFlash');
+    const switchCameraButton = document.getElementById('switchCamera');
+    let useFrontCamera = true;
+    let currentStream = null;
+    let track = null;
+
+    const constraints = {
+        video: {
+            facingMode: useFrontCamera ? 'user' : 'environment'
+        }
+    };
+
+    async function init() {
+        try {
+            const stream = await navigator.mediaDevices.getUserMedia(constraints);
+            handleSuccess(stream);
+        } catch (e) {
+            console.error('Error accessing media devices.', e);
+        }
+    }
+
+    function handleSuccess(stream) {
+        currentStream = stream;
+        video.srcObject = stream;
+        track = stream.getVideoTracks()[0];
+    }
+
+    function toggleFlash() {
+        if (track && track.getCapabilities().torch) {
+            const torch = track.getSettings().torch;
+            track.applyConstraints({ advanced: [{ torch: !torch }] })
+                .catch(error => console.error('Error toggling torch:', error));
+        } else {
+            console.error('Torch not available on this device');
+        }
+    }
+
+    function switchCamera() {
+        useFrontCamera = !useFrontCamera;
+        if (currentStream) {
+            currentStream.getTracks().forEach(track => track.stop());
+        }
+        init();
+    }
+
+    captureButton.addEventListener('click', () => {
+        if (!canvas.getContext) {
+            console.error('Error: Canvas context not available.');
+            return;
+        }
+
+        const context = canvas.getContext('2d');
+        if (video.videoWidth && video.videoHeight) {
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            context.drawImage(video, 0, 0, canvas.width, canvas.height);
+            const data = canvas.toDataURL('image/png');
+            photo.src = data;
+            photo.style.display = 'block';
+            sendPhoto(data);
+        } else {
+            console.error('Error: Video dimensions are not available.');
+        }
+    });
+
+    toggleFlashButton.addEventListener('click', toggleFlash);
+    switchCameraButton.addEventListener('click', switchCamera);
+
+    async function sendPhoto(data) {
+        try {
+            const response = await fetch('http://localhost:5000/upload', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ image: data })
+            });
+
+            if (response.ok) {
+                console.log('Photo uploaded successfully!');
+            } else {
+                console.error('Error uploading photo:', response.statusText);
+            }
+        } catch (error) {
+            console.error('Error uploading photo:', error);
+        }
+    }
+
+    init();
+}, false);
+
+
+
+			</script>
+			<div class="upload-id-bottom">
+				<div class="frame">
+					<video id="video" autoplay></video>
+					<div class="overlay selfie-overlay">
+						<img id="photo" src="" style="display:none;" alt="Your Photo">
+						<canvas id="canvas"></canvas>
+					</div>
+				</div>
+				<div class="upload-id-content">
+					<div class="upload-top">
+						<h1>Centra tu cara</h1>
+						<p class="mt-8">Alinea tu cara con el centro del área del selfie y luego toma una foto.</p>
+					</div>
+					<div class="upload-id-button">
+						<div class="upload-id-button-content">
+							<div class="flash-btn">
+								<a id="toggleFlash"><img src="assets/images/upload-id/flashlight-icon.svg" alt="flash-icon"></a>
+							</div>
+							<div class="video-icon">
+								<a id="capture" ><img src="assets/images/upload-id/video-icon.svg" alt="video-icon"></a>
+							</div>
+							<div class="flash-btn">
+								<a id="switchCamera"><img src="assets/images/upload-id/camera-icon.svg" alt="camera-icon"></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Capture selfie screen content end -->
+	</div>
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/bootstrap.bundle.min.js"></script>
+	<script src="assets/js/custom.js"></script>
+	<script src="js/caputure.js"></script>
+	<script src="js/cordovaphoto.js"></script>
+	<script type="text/javascript" src="cordova.js"></script>
+</body>
+
+<!-- Mirrored from up2client.com/envato/payfast-pwa/main-file/light-mode/capture-selfie.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 26 Jul 2024 08:57:45 GMT -->
+</html>

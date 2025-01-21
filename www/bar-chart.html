@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from up2client.com/envato/payfast-pwa/main-file/light-mode/bar-chart.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 26 Jul 2024 08:58:54 GMT -->
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>PayFast E-Wallet _ Finance & Online Payment Mobile App</title>
+	<link rel="icon" href="assets/images/favicon/icon.png">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="assets/css/all.min.css">
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="assets/css/media-query.css">
+</head>
+<body>
+	<div class="site-content">
+		<!-- Preloader start -->
+		<div class="loader-mask">
+			<div class="loading-window">
+				<div class="loader">
+					<div class="loader-inner line-scale">
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Preloader end -->
+		<!-- Bar chart content start -->
+		<div class="verify-number-main">
+			<div class="verify-number-top">
+				<div class="container">
+					<div class="verify-number-top-content">
+						<div class="setting-header">
+							<div class="setting-left">
+								<span class="setting-txt">Analítica</span>
+							</div>
+							<div class="setting-right">
+								<span><a href=""><img src="assets/svg/notification-icon.svg" alt="notification-icon"></a></span>
+							</div>
+						</div>
+					</div>
+					<div class="chat-content">
+						<h1 class="d-none">Area Chart</h1>
+						<div class="chat-income-sec">
+							<div class="chat-income">
+								<div>
+									<img src="assets/svg/income-icon.svg" alt="income-icon">
+								</div>
+								<div class="chat-txt">
+									<h2 class="chat-txt1" id="sold"></h2>
+									<p class="chat-txt2">Saldo</p>
+								</div>
+							</div>
+							<div class="chat-expense">
+								<div>
+									<img src="assets/svg/expense-icon.svg" alt="income-icon">
+								</div>
+								<div class="chat-txt">
+									<h2 class="chat-txt1 color-red" id="credit"></h2>
+									<p class="chat-txt2 ">crédito</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="verify-number-bottom area-chat" id="send-money-contact">
+				<div class="verify-number-bottom-wrap">
+					<div class="line-chart-content">
+						<div class="statistic-overview">
+							<div class="statistic-overview-content">
+								<div class="statistic-first">
+									<h2>Resumen estadístico</h2>
+								</div>
+								<div class="statistic-second">
+									<div class="custom-select-internet mt-8">
+										<select name="persons" id="select-currency" class="arrow-icon">
+											<option>Monthly</option>
+											<option>Half-yearly</option>
+											<option>Yearly</option>
+											<option>Quarterly </option>
+										</select>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="chart-container mt-16">
+							<canvas id="barChart"></canvas>
+						</div>
+						<div class="chart-border"></div>
+						
+					</div>
+				</div>	
+			</div>
+		</div>
+		<!-- Bar chart content end -->
+		<!-- Bottom tabbar content start -->
+		<div class="bottom-menu-svg-main">
+			<div class="bottom-menu-svg">
+				<div class="gol3">
+					<div class="add-to-cart-icon">
+						<a href="">
+							<img src="assets/images/home/credit-card.svg" alt="tabbar-icon">
+						</a>
+					</div>
+				</div>
+				<svg class="bottom-menu-svg-design" width="600" height="150" viewBox="0 0 375 104" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<g filter="url(#filter0_b_1_13394)">
+						<path d="M188 45.5313C205.673 45.5313 220 31.2045 220 13.5313C220 7.32365 224.732 0.674172 230.917 1.20338L360.364 12.2791C368.642 12.9873 375 19.913 375 28.2208V103.531H0V28.2275C0 19.9169 6.36254 12.9898 14.6432 12.2851L145.074 1.18463C151.266 0.657657 156 7.31698 156 13.5313C156 31.2045 170.327 45.5313 188 45.5313Z" fill="url(#paint0_linear_1_13394)"/>
+					</g>
+					<defs>
+						<filter id="filter0_b_1_13394" x="-24" y="-22.8447" width="423" height="150.376" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+							<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+							<feGaussianBlur in="BackgroundImageFix" stdDeviation="12"/>
+							<feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_1_13394"/>
+							<feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_1_13394" result="shape"/>
+						</filter>
+						<linearGradient id="paint0_linear_1_13394" x1="187.5" y1="0" x2="188" y2="103.531" gradientUnits="userSpaceOnUse">
+							<stop offset="0" stop-color="#121212" stop-opacity="0.24"/>
+							<stop offset="1" stop-color="#121212" stop-opacity="0.16"/>
+						</linearGradient>
+					</defs>
+				</svg>
+			</div>
+		</div>
+		<div class="navigation">
+			<ul class="listWrap">
+				<li class="list ">
+					<a href="dashboard.html">
+						<i class="icon">
+							<img src="assets/images/tabbar/icon1.svg" alt="tabbar-icon">	
+						</i>
+						<span class="text"></span>
+					</a>
+				</li>
+				<li class="list">
+					<a href="activity.html">
+						<i class="icon">
+							<img src="assets/images/tabbar/icon2.svg" alt="tabbar-icon">	
+
+						</i>
+						<span class="text"></span>
+					</a>
+				</li>
+				<li class="list active">
+					<a href="bar-chart.html">
+						<i class="icon">
+							<img src="assets/images/tabbar/icon3.svg" alt="tabbar-icon">	
+
+						</i>
+						<span class="text"></span>
+					</a>
+				</li>
+				<li class="list">
+					<a href="setting.html">
+						<i class="icon">
+							<img src="assets/svg/settings-svgrepo-com.svg" alt="tabbar-icon">	
+						</i>
+						<span class="text"></span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<!-- Bottom tabbar content end -->
+	</div>
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/bootstrap.bundle.min.js"></script>
+	<script src="assets/js/chart.js"></script>
+	<script src="assets/js/custom.js"></script>
+	<script src="js/dashboard.js"></script>
+	<script>
+        function fetchUserId() {
+            const userId = localStorage.getItem('utilisateurId');
+            if (!userId) {
+                alert('Veuillez entrer l\'ID de l\'utilisateur dans le localStorage.');
+                return;
+            }
+
+            // Récupérer le from_user_id à partir de l'API profile
+            const profileApiUrl = `http://localhost:4000/profile/${userId}`;
+
+            fetch(profileApiUrl)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Erreur de réseau lors de la récupération du profil.');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log('Réponse de l\'API profil:', data);
+                    const fromUserId = data.utilisateur.id; // Utilisez `id` au lieu de `from_user_id`
+                    if (!fromUserId) {
+                        alert('ID utilisateur introuvable dans la réponse du profil.');
+                        return;
+                    }
+                    // Utiliser from_user_id pour récupérer les données des transferts
+                    fetchTransfersData(fromUserId);
+                })
+                .catch(error => {
+                    console.error('Erreur lors de la récupération du profil:', error);
+                    alert('Erreur lors de la récupération du profil. Veuillez vérifier la console pour plus de détails.');
+                });
+        }
+
+        function fetchTransfersData(fromUserId) {
+            const transfersApiUrl = `http://localhost:4000/charts/${fromUserId}`;
+
+            fetch(transfersApiUrl)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Erreur de réseau lors de la récupération des transferts.');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    updateChart(data);
+                })
+                .catch(error => {
+                    console.error('Erreur lors de la récupération des transferts:', error);
+                    alert('Erreur lors de la récupération des transferts. Veuillez vérifier la console pour plus de détails.');
+                });
+        }
+
+        function updateChart(data) {
+            const periods = data.outgoing.map(item => item.period);
+            const outgoingData = data.outgoing.map(item => item.total_outgoing);
+            const incomingData = data.incoming.map(item => item.total_incoming);
+            const spentData = data.spent.map(item => item.total_spent);
+
+            const ctx = document.getElementById('barChart').getContext('2d');
+
+            // Si un graphique existe déjà, le détruire
+            if (window.barChart && window.barChart.destroy) {
+                window.barChart.destroy();
+            }
+
+            // Créer un nouveau graphique
+            window.barChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+					
+                    labels:[periods],
+                    datasets: [
+                        {
+                            label: 'Sorties',
+                            data: [outgoingData],
+                            backgroundColor: '#4CAF50',
+                            stack: 'Stack 0'
+                        },
+                        {
+                            label: 'Entrées',
+                            data: incomingData,
+                            backgroundColor: '#F44336',
+                            stack: 'Stack 0'
+                        },
+                        {
+                            label: 'Dépenses',
+                            data: spentData,
+                            backgroundColor: '#2196F3',
+                            stack: 'Stack 1'
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                callback: function(value) {
+                                    return '€ ' + value;
+                                }
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            position: 'bottom'
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    let label = context.dataset.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    label += '€' + context.raw;
+                                    return label;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        // Appeler fetchUserId pour initialiser le graphique au chargement de la page
+        fetchUserId();
+    </script>
+
+</body>
+
+<!-- Mirrored from up2client.com/envato/payfast-pwa/main-file/light-mode/bar-chart.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 26 Jul 2024 08:58:55 GMT -->
+</html>

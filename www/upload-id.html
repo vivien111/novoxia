@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from up2client.com/envato/payfast-pwa/main-file/light-mode/upload-id.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 26 Jul 2024 08:57:45 GMT -->
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>PayFast E-Wallet _ Finance & Online Payment Mobile App</title>
+	<link rel="icon" href="assets/images/favicon/icon.png">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="assets/css/all.min.css">
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="assets/css/media-query.css">
+</head>
+<body>
+	<div class="site-content">
+		<!--Upload screen content start -->
+		<div class="verify-number-main" id="upload-id-page">
+			<div class="verify-number-top">
+				<div class="container">
+					<div class="verify-number-top-content">
+						<div class="back-btn">
+							<a href="personal-info-slider.html">
+								<img src="assets/svg/header-white-icon.svg" alt="back-btn">
+							</a>
+						</div>
+						<div class="header-title">
+							<p>Tu documento de identidad</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--<script type="text/javascript">
+let isUsingFrontCamera = false; // Use the rear camera by default
+let videoStream = null;
+
+document.addEventListener("deviceready", onDeviceReady, false);
+
+function onDeviceReady() {
+  console.log("Cordova is ready");
+
+  const video = document.getElementById('cameraFeed');
+  const switchCameraBtn = document.getElementById('switchCamera');
+  const capturePhotoBtn = document.getElementById('capturePhoto');
+
+  function startCamera() {
+    navigator.mediaDevices
+      .getUserMedia({
+        video: {
+          facingMode: { exact: isUsingFrontCamera ? "user" : "environment" }
+        }
+      })
+      .then((stream) => {
+        video.srcObject = stream;
+        video.play();
+        videoStream = stream;
+      })
+      .catch((error) => {
+        console.error('Error accessing camera:', error);
+      });
+  }
+
+  startCamera();
+
+  switchCameraBtn.addEventListener('click', () => {
+    isUsingFrontCamera = !isUsingFrontCamera;
+
+    if (videoStream) {
+      videoStream.getTracks().forEach((track) => track.stop());
+    }
+
+    startCamera();
+  });
+
+  capturePhotoBtn.addEventListener('click', () => {
+    const canvas = document.createElement('canvas');
+    const context = canvas.getContext('2d');
+    canvas.width = video.videoWidth;
+    canvas.height = video.videoHeight;
+    context.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+    const imageData = canvas.toDataURL('image/jpeg');
+
+    // Send the image to the server
+    sendPhotoToServer(imageData);
+  });
+}
+
+async function sendPhotoToServer(imageData) {
+  try {
+    const response = await fetch('http://localhost:4000/upload', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ image: imageData })
+    });
+
+    if (response.ok) {
+      console.log('Photo uploaded successfully!');
+    } else {
+      console.error('Error uploading photo:', response.statusText);
+    }
+  } catch (error) {
+    console.error('Error uploading photo:', error);
+  }
+}
+
+
+
+			</script>--->
+				<style>
+				 
+					#canvas {
+						display: none;
+					}
+					#photo {
+						width: 100%;
+						max-width: 700px;
+						height: auto;
+						margin-top: 150px;
+					}
+					#spinner {
+            display: none;
+            width: 50px;
+            height: 50px;
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #3498db;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+						</style>
+			<div class="upload-id-bottom">
+				<div class="frame">
+					<video id="video" autoplay></video>
+					<div class="overlay">
+						<img id="photo" style="display:none;" src="" alt="Your Photo">
+						<canvas id="canvas"></canvas>
+					</div>
+				</div>
+				<div id="spinner"></div>
+
+				<div class="upload-id-content">
+					<div class="upload-top">
+						<h1>Parte frontal de la licencia</h1>
+						<p class="mt-8">Coloque las 4 esquinas del frente claramente en el marco.</p>
+					</div>
+					<div class="upload-id-button">
+						<div class="upload-id-button-content">
+							<div class="flash-btn">
+								<a id="toggleFlash"><img src="assets/images/upload-id/flashlight-icon.svg" alt="flash-icon"></a>
+							</div>
+							<div class="video-icon" id="go-to-step-4">
+								<a id="capture"><img src="assets/images/upload-id/video-icon.svg" alt="video-icon"></a>
+							</div>
+							<div class="flash-btn">
+								<a id="switchCamera"><img src="assets/images/upload-id/camera-icon.svg" alt="camera-icon"></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--Upload screen content end -->
+	</div>
+	<script type="text/javascript" src="cordova.js"></script>
+
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/bootstrap.bundle.min.js"></script>
+	<script src="assets/js/custom.js"></script>
+	<script src="js/iddaw.js"></script>
+</body>
+
+<!-- Mirrored from up2client.com/envato/payfast-pwa/main-file/light-mode/upload-id.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 26 Jul 2024 08:57:45 GMT -->
+</html>

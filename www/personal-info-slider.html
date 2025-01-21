@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from up2client.com/envato/payfast-pwa/main-file/light-mode/personal-info-slider.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 26 Jul 2024 08:57:41 GMT -->
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>PayFast E-Wallet _ Finance & Online Payment Mobile App</title>
+	<link rel="icon" href="assets/images/favicon/icon.png">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="assets/css/all.min.css">
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="assets/css/media-query.css">
+</head>
+<body>
+	<div class="site-content">
+		<!-- Preloader start -->
+		<div class="loader-mask">
+			<div class="loading-window">
+				<div class="loader">
+					<div class="loader-inner line-scale">
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Preloader end -->
+		<!-- Personal info slider content start -->
+		<div class="verify-number-main">
+			<div class="verify-number-top">
+				<div class="container">
+					<div class="verify-number-top-content">
+						<div class="back-btn">
+							<a href="javascript:history.go(-1)">
+								<img src="assets/svg/header-white-icon.svg" alt="back-btn">
+							</a>
+						</div>
+						<div class="header-title">
+							<p>Información</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="verify-number-bottom" id="personal-info-slider">
+				<div class="verify-number-bottom-wrap">		
+				<h1 class="d-none">Hidden</h1>				
+					<form id="msform">
+						<div class="progress">
+							<div class="progress-bar progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+							</div>
+						</div> 
+						<fieldset class="mt-24">
+							<div class="personal-info">
+								<div class="home-address-content">
+									<div class="home-address-heading">
+										<h2>Información personal</h2>
+										<p>Solicitamos su información personal para verificar su identidad</p>
+									</div>
+									<div class="multistep-form password-form">
+										<div class="form-floating mt-24">
+											<input type="text" class="form-control " id="nom" name="nom" placeholder="First Name" autocomplete="off">
+											<label for="first-name">Nombre de pila</label>
+										</div>
+										<div class="form-floating mt-24">
+											<input type="text" class="form-control " id="prenom" name="prenom" placeholder="Last Name" autocomplete="off">
+											<label for="last-name">Apellido</label>
+										</div>
+										<div class="form-floating mt-24">
+											<input type="text" class="form-control " id="date_de_naissance" name="date_de_naissance" placeholder="Date of birth (MM/DD/YYYY)" autocomplete="off">
+											<label for="date-of-birth">Fecha de nacimiento (MM/DD/YYYY)</label>
+										</div>
+									</div>
+								</div>
+							</div>
+							<input type="button" name="next" class="next action-button input-icon-next hidden-text-button" value="submit">
+						</fieldset>
+						<fieldset class="mt-24">
+							<div class="personal-info">
+								<div class="home-address-content">
+									<div class="home-address-heading">
+										<h2>Información personal</h2>
+										<p>Solicitamos su información personal para verificar su identidad</p>
+									</div>
+									<div class="multistep-form password-form">
+										<div class="form-floating mt-24">
+											<input type="text" class="form-control" name="email" id="email" placeholder="Email" autocomplete="off">
+											<label for="first-name">Correo electrónico</label>
+										</div>
+										<div class="form-floating mt-24">
+											<input type="text" class="form-control " id="telephone" name="telephone" placeholder="Last Name" autocomplete="off">
+											<label for="last-name">Número de teléfono</label>
+										</div>
+										<div class="form-floating mt-24">
+											<input type="password" class="form-control " id="motDePasse" name="motDePasse" placeholder="Last Name" autocomplete="off">
+											<label for="last-name">Contraseña</label>
+										</div>
+										<div class="form-floating mt-24">
+											<select class="form-control " id="pays"  name="pays" autocomplete="off">
+												<option class="form-control" value="Espagne">España</option>
+											</select>
+										</div>
+									</div>
+								</div>
+							</div>
+							<input type="button" name="next" class="next action-button input-icon-next hidden-text-button" value="submit">
+						</fieldset>
+						<fieldset class="mt-24">
+							<div class="home-address">
+								<div class="home-address-content">
+									<div class="home-address-heading">
+										<h2>Dirección de casa</h2>
+									</div>
+									<div class="multistep-form password-form">
+										<div class="form-floating mt-24">
+											<input type="text" class="form-control " id="adresse" name="adresse" placeholder="Street Address" autocomplete="off">
+											<label for="street-add">Dirección</label>
+										</div>
+										<div class="form-floating mt-24">
+											<input type="number" class="form-control " id="number-suite" placeholder="Apt / Suite Number" autocomplete="off">
+											<label for="number-suite">Número de apartamento/suite</label>
+										</div>
+										<div class="form-floating mt-24">
+											<input type="text" class="form-control " id="ville" name="ville" placeholder="City" >
+											<label for="city">Ciudad</label>
+										</div>
+										<div class="form-floating mt-24">
+											<input type="text" class="form-control " id="region" placeholder="Region" autocomplete="off">
+											<label for="region">Región</label>
+										</div>
+										<div class="form-floating mt-24">
+											<input type="number" class="form-control " id="code_postal" name="code_postal" placeholder="Zip Code" autocomplete="off">
+											<label for="zip-code">Código postal</label>
+										</div>
+									</div>
+								</div>
+							</div>
+							<input type="button" name="next" id="final-next" class="next action-button input-icon-next hidden-text-button" value="submit"> 
+							<input type="button" name="previous" class="previous action-button-previous input-icon-previous hidden-text-button" value="submit">
+						</fieldset>
+						<fieldset class="mt-24">
+							<div class="verify-identity">
+								<div class="home-address-content">
+									<div class="home-address-heading">
+										<h2>Verificar identidad</h2>
+									</div>
+									<div class="multistep-form password-form">
+										<div class="goverment-id mt-24">
+											<div class="goverment-id-sec">
+												<h3>Identificación gubernamental</h3>
+												<p>Traer licencia de conducir, documento nacional de identidad o identificación con fotografía.</p>
+												<div class="select-sec-id mt-24">
+													<div class="plus-id-btn">
+														<a href="#photo-id-modal" data-bs-toggle="modal">
+															<img src="assets/svg/faq-plus.svg" alt="plus-icon">
+														</a>
+														<p class="select-txt">Seleccionar</p>
+													</div>
+												</div>
+											</div>
+											<!---<div class="goverment-id-sec mt-16">
+												<h3>Selfie Photo</h3>
+												<p>It’s required by law to verify your identity as a new user</p>
+												<div class="select-sec">
+													<div class="plus-id-btn">
+														<a href="capture-selfie.html">
+															<img src="assets/svg/faq-plus.svg" alt="plus-icon">
+														</a>
+														<p class="select-txt">Select</p>
+													</div>
+												</div>
+											</div>---->
+										</div>
+									</div>
+								</div>
+							</div>
+							<input type="button" name="previous" class="previous action-button-previous input-icon-previous hidden-text-button" value="submit">
+							<div class="verify-id-btn ">
+								<a id="submit-button" href="#">Verificar mi identidad</a>	
+							</div>
+						</fieldset>
+					</form>
+				</div>	
+			</div>
+		</div>
+		<!-- Personal info slider content end -->
+		<!-- Modal content start -->
+		<div class="modal fade photo-custom-modal" id="photo-id-modal" tabindex="-1" aria-hidden="true" >
+			<div class="modal-dialog ">
+				<div class="modal-content finger-modal-content">
+					<div class="modal-body">
+						<div class="photo-modal-content">
+							<div class="card-btn">
+								<button type="button"  data-bs-dismiss="modal" aria-label="Close"><img src="assets/svg/card-down-btn.svg" alt="cart-icon"></button>
+							</div>
+							<div class="photo-type">
+								<p class="mt-16">¿Qué identificación con fotografía le gustaría usar?</p>
+								<div class="photo-content-details">
+									<a href="upload-id.html">
+										<div>Licencia de conducir</div>
+										<div><img src="assets/svg/black-right-arrow.svg" alt="right-icon"></div>
+									</a>
+								</div>
+								<div class="photo-content-details">
+									<a href="upload-id.html">
+										<div>Documento Nacional de Identidad</div>
+										<div><img src="assets/svg/black-right-arrow.svg" alt="right-icon"></div>
+									</a>
+								</div>
+								<div class="photo-content-details">
+									<a href="upload-id.html" class="border-0">
+										<div>Pasaporte</div>
+										<div><img src="assets/svg/black-right-arrow.svg" alt="right-icon"></div>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Modal content end -->
+	</div>
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/bootstrap.bundle.min.js"></script>
+	<script src="assets/js/form.js"></script>
+	<script src="assets/js/custom.js"></script>
+	<script src="js/register.js"></script>
+</body>
+
+<!-- Mirrored from up2client.com/envato/payfast-pwa/main-file/light-mode/personal-info-slider.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 26 Jul 2024 08:57:43 GMT -->
+</html>

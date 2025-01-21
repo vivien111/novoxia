@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from up2client.com/envato/payfast-pwa/main-file/light-mode/transfer-bank2.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 26 Jul 2024 08:59:16 GMT -->
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>PayFast E-Wallet _ Finance & Online Payment Mobile App</title>
+	<link rel="icon" href="assets/images/favicon/icon.png">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="assets/css/all.min.css">
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="assets/css/media-query.css">
+</head>
+<body>
+	<div class="site-content">
+		<!-- Preloader start -->
+		<div class="loader-mask">
+			<div class="loading-window">
+				<div class="loader">
+					<div class="loader-inner line-scale">
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Preloader end -->
+		<!-- Transfer to bank2 start -->
+		<div class="verify-number-main">
+			<div class="verify-number-top">
+				<div class="container">
+					<div class="verify-number-top-content">
+						<div class="back-btn">
+							<a href="javascript:history.go(-1)">
+								<img src="assets/svg/header-white-icon.svg" alt="back-btn">
+							</a>
+						</div>
+						<div class="header-title">
+							<p>Recarga tu cuenta</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="verify-number-bottom" id="send-money1">
+				<div class="verify-number-bottom-wrap">
+					<div class="verify-number-content">
+						<div class="sendmoney1-bottom">
+							<h1 class="d-none">Send Money</h1>
+							<h2 class="d-none">Hidden</h2>
+							<form>
+								<div class="enter-amount">
+									<label for="customer-amount">Introduce el importe a recargar</label>
+									<input type="text" id="paymentAmount"  class="mt-16 active"  value="100">
+								</div>
+							</form>
+							<div class="transfer-to-bank2">
+								<p class="available-txt mt-16 chart-border">Haga clic en uno de los métodos de pago para depositar fondos en su cuenta</p>
+								<p class="fee-txt mt-24 "></p>
+								<div id="paypal-button-container"></div>
+							</div>
+						</div>
+						<div class="verify-number-btn"><a id="myPayPalButton" style="color: white;">Enviar</a></div>
+					</div>
+				</div>	
+			</div>
+		</div>
+		
+		
+		<!-- Transfer to bank2 end -->
+	</div>
+	<script>
+		document.getElementById('myPayPalButton').addEventListener('click', function() {
+			// Récupérer le montant depuis le champ d'entrée
+			const amount = document.getElementById('paymentAmount').value;
+	
+			// Vérifier si le bouton PayPal est déjà rendu
+			if (document.getElementById('paypal-button-container').innerHTML === "") {
+				paypal.Buttons({
+					createOrder: function(data, actions) {
+						return actions.order.create({
+							purchase_units: [{
+								amount: {
+									value: amount // Utiliser le montant dynamique
+								}
+							}]
+						});
+					},
+					onApprove: function(data, actions) {
+						return actions.order.capture().then(function(details) {
+							alert('Transaction completed by ' + details.payer.name.given_name);
+						});
+					},
+					onError: function(err) {
+						console.error('Erreur lors de la transaction : ', err);
+						alert('Une erreur est survenue lors du traitement du paiement.');
+					}
+				}).render('#paypal-button-container');
+	
+				// Cacher le bouton personnalisé après avoir rendu le bouton PayPal
+				document.getElementById('myPayPalButton').style.display = 'none';
+			} else {
+				alert('Le bouton PayPal a déjà été affiché.');
+			}
+		});
+	</script>
+	
+
+	
+
+	<script src="https://www.paypal.com/sdk/js?client-id=AYFnMvF6DLqq65EjvH7ZqSuXcb5XHiRfeOhVKTD4o9UVvss8IcIuUcTVu2pxv9NbFtQoMP97AaFyMATw"></script>
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/bootstrap.bundle.min.js"></script>
+	<script src="assets/js/custom.js"></script>
+</body>
+
+<!-- Mirrored from up2client.com/envato/payfast-pwa/main-file/light-mode/transfer-bank2.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 26 Jul 2024 08:59:17 GMT -->
+</html>

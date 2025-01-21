@@ -1,0 +1,58 @@
+/* styles.css */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.pin-container {
+    text-align: center;
+    border: 1px solid #ccc;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+input#pinCode {
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.keyboard {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+button.key {
+    padding: 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 4px;
+    background: #eee;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button.key:hover {
+    background: #ddd;
+}
+
+button.key-clear {
+    grid-column: span 3;
+    background: #ff4d4d;
+    color: #fff;
+}
+
+button.key-backspace {
+    background: #ffa500;
+    color: #fff;
+}
